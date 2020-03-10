@@ -1,5 +1,6 @@
 package com.yly.remotebinder
 
+import android.app.Service
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
                         data.writeInterfaceToken("MyRemoteBinder")
                         data.writeString("yuliyang")
                         service.transact(1000, data, reply, 0)
+                        println(reply.readString())
                         data.recycle()
                         reply.recycle()
                     }
