@@ -4,6 +4,7 @@
     package="com.yly.remotebinder">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,9 +19,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
             android:name=".RemoteService"
             android:process=":remote" />
+
+        <service
+            android:name=".RemoteService2"
+            android:process="android.yly" />
+
+        <service
+            android:name=".RemoteService3"
+            android:process="android.yly.otherservice" />
     </application>
 
 </manifest>
